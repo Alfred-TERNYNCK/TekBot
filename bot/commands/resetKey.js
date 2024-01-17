@@ -12,9 +12,9 @@ module.exports = (client, prefix, userKeys) => {
                 if (userKeys.has(message.author.id)) {
                     // effacer la clé d'authentification de la Map
                     userKeys.delete(message.author.id);
-                    message.reply('Votre clé d\'authentification a été réinitialisée avec succès.\n' +'Veuillez renvoyer votre clé d\'authentification avec la commande !setkey');
+                    message.reply('Your authentication key has been successfully reset.\n' +'Please resend your authentication key using the command !setkey.');
                 } else {
-                    message.reply('Vous n\'avez pas encore enregistré de clé d\'authentification. Utilisez !setkey pour enregistrer une clé.');
+                    message.reply('You have not yet registered an authentication key. Use !setkey to register a key.');
                 }
             }
         }

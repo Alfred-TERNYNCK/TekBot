@@ -1,21 +1,21 @@
 module.exports = {
     name: 'help',
-    description: 'Affiche la liste des commandes',
+    description: 'Displays the list of commands',
     execute(message) {
         const helpEmbed = {
             color: 0x0099ff,
-            title: 'Aide',
-            description: 'Liste des commandes',
+            title: 'Help',
+            description: 'List of commands',
             fields: [
                 {
                     name: 'Commandes',
-                    value: "!help : Affiche la liste des commandes\n" +
-                    "!info : Affiche les informations de l\'utilisateur\n" +
-                    "!now : Affiche les informations sur les activitée du moment, ou sur une activtée spécifique\n" +
-                    "!planning : Affiche le planning de la semaine ou celuis d'un jour en particulier\n" +
-                    "!module : Affiche les crédits et le grade d'un module spécifique\n" +
-                    "!setkey : Permet de changer la clé d'API de l'utilisateur\n" +
-                    "!resetkey : Permet de réinitialiser la clé d'API de l'utilisateur\n",
+                    value: "!help : Displays the list of commands\n" +
+                    "!info : Displays user information\n" +
+                    "!now : Displays information on current activities, or on a specific activity\n" +
+                    "!planning : Displays the weekly schedule or that of a specific day\n" +
+                    "!module : Displays the credits and grade of a specific module\n" +
+                    "!setkey : Allows changing the user's API key\n" +
+                    "!resetkey : Allows resetting the user's API key\n",
                 },
             ],
         };

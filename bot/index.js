@@ -38,14 +38,14 @@ client.commands.set(noteCommand.name, noteCommand);
 
 
 client.once('ready', () => {
-    console.log(`Prêt ! Connecté en tant que ${client.user.tag}`);
+    console.log(`Ready! Connected as ${client.user.tag}`);
 
     const logChannel = client.channels.cache.get(logChannelId);
 
     if (logChannel) {
-        logChannel.send('Je suis maintenant en ligne !');
+        logChannel.send('I am now online!');
     } else {
-        console.error('Le canal de logs est introuvable. Assurez-vous que le canal log_bot existe et que le bot a les autorisations nécessaires.');
+        console.error('The log channel cannot be found. Make sure the log_bot channel exists and that the bot has the necessary permissions.');
     }
 });
 
@@ -65,7 +65,7 @@ client.on('messageCreate', async message => {
         command.execute(message, args);  // Passer les arguments à la fonction execute
     } catch (error) {
         console.error(error);
-        message.reply('Une erreur s\'est produite lors de l\'exécution de la commande.');
+        message.reply('An error occurred during the execution of the command.');
     }
 });
 

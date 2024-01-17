@@ -2,22 +2,22 @@ const notes = require('../data/notes.json');
 
 module.exports = {
     name: 'module',
-    description: 'Affiche les notes des modules',
+    description: 'Display module grades',
     execute: (message, args) => {
         if (!args || args.length < 1) {
             // Afficher la liste des modules disponibles
             const moduleList = Object.keys(notes.modules[0]).join(', ');
             const helpEmbed = {
                 color: 0x0099ff,
-                title: 'Aide - Commande Note',
-                description: 'Affiche les notes des modules.',
+                title: 'Help - Grade Command',
+                description: 'Displays the grades of the modules.',
                 fields: [
                     {
-                        name: 'Utilisation',
-                        value: '!note [nom-du-module]',
+                        name: 'Usage',
+                        value: '!grade [module-name]',
                     },
                     {
-                        name: 'Modules disponibles',
+                        name: 'Available Modules',
                         value: moduleList,
                     },
                 ],
@@ -29,7 +29,7 @@ module.exports = {
         const moduleName = args[0];
 
         if (!notes.modules[0].hasOwnProperty(moduleName)) {
-            message.reply('Module introuvable.');
+            message.reply('Module not found.');
             return;
         }
 
@@ -40,17 +40,17 @@ module.exports = {
             title: `${moduleName} - ${moduleInfo.title}`,
             fields: [
                 {
-                    name: 'Crédits',
+                    name: 'Credits',
                     value: moduleInfo.credits,
                     inline: true,
                 },
                 {
-                    name: 'Note',
+                    name: 'Grade',
                     value: moduleInfo.grade,
                     inline: true,
                 },
                 {
-                    name: 'Semestre',
+                    name: 'Semester',
                     value: moduleInfo.semester,
                     inline: true,
                 },

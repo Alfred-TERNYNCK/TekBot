@@ -2,7 +2,7 @@ const userData = require('../data/user_data.json');
 
 module.exports = {
     name: 'info',
-    description: 'Affiche les informations de l\'utilisateur',
+    description: 'Display user information',
     execute(message) {
         const user = userData;
 
@@ -11,10 +11,10 @@ module.exports = {
             const infoEmbed = {
                 color: 0x0099ff,
                 title: 'Information',
-                description: "Information de l'étudiant",
+                description: "Student Information",
                 fields: [
                     {
-                        name: 'Nom complet',
+                        name: 'Full Name',
                         value: user.title,
                     },
                     {
@@ -22,7 +22,7 @@ module.exports = {
                         value: user.gpa[0].gpa,
                     },
                     {
-                        name: 'Crédits',
+                        name: 'Credits',
                         value: user.credits,
                     },
                     {
@@ -30,15 +30,15 @@ module.exports = {
                         value: user.groups[0].title,
                     },
                     {
-                        name: 'Temps de log actuel',
+                        name: 'Current Log Time',
                         value: user.nsstat.active.toString(),
                     },
                     {
-                        name: 'Temps de log à avoir',
+                        name: 'Required Log Time',
                         value: user.nsstat.nslog_norm.toString(),
                     },
                     {
-                        name: 'Temps de log restant',
+                        name: 'Remaining Log Time',
                         value: timeLeft.toString(),
                     },
                 ],
@@ -49,7 +49,7 @@ module.exports = {
             const infoEmbed = {
                 color: 0x0099ff,
                 title: 'Information',
-                description: "L'utilisateur n'a pas été trouvé",
+                description: "User not found",
             };
 
             message.channel.send({ embeds: [infoEmbed] });

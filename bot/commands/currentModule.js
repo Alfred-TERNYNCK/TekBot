@@ -20,7 +20,7 @@ module.exports = (client, prefix) => {
             const moduleEmbed = {
                 color: 0x0099ff,
                 title: 'Modules',
-                description: requestedModule ? `Informations sur le module ${capitalizeFirstLetter(requestedModule)}` : 'Liste des modules du moment',
+                description: requestedModule ? `Information about the module ${capitalizeFirstLetter(requestedModule)}` : 'List of current modules',
                 fields: [],
             };
 
@@ -29,7 +29,7 @@ module.exports = (client, prefix) => {
 
                 moduleEmbed.fields.push({
                     name: moduleInfo.title,
-                    value: `Début : ${moduleInfo.timeline_start}\nFin : ${moduleInfo.timeline_end}\nBarre de progression : ${moduleInfo.timeline_barre}%`,
+                    value: `Start : ${moduleInfo.timeline_start}\nEnd : ${moduleInfo.timeline_end}\nProgress Bar : ${moduleInfo.timeline_barre}%`,
                 });
             } else if (!requestedModule) {
                 for (const moduleKey in modules) {
@@ -37,11 +37,11 @@ module.exports = (client, prefix) => {
 
                     moduleEmbed.fields.push({
                         name: capitalizeFirstLetter(moduleKey),
-                        value: `Début : ${moduleInfo.timeline_start}\nFin : ${moduleInfo.timeline_end}\nBarre de progression : ${moduleInfo.timeline_barre}%`,
+                        value: `Start : ${moduleInfo.timeline_start}\nEnd : ${moduleInfo.timeline_end}\nProgress Bar : ${moduleInfo.timeline_barre}%`,
                     });
                 }
             } else {
-                message.reply('Module spécifique invalide.');
+                message.reply('Invalid specific module.');
                 return;
             }
 

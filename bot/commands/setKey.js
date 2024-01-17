@@ -16,12 +16,12 @@ module.exports = (client, prefix, userKeys) => {
                 // Vérifier si l'utilisateur a déjà une clé d'authentification
                 if (userKeys.has(message.author.id)) {
                     // Si oui, envoyer un message dans le même canal
-                    return message.channel.send('Vous avez déjà une clé d\'authentification. Si vous souhaitez la changer, faites !resetkey.');
+                    return message.channel.send('You already have an authentication key. If you wish to change it, use !resetkey.');
                 }
     
                 // Envoyer un message privé à l'utilisateur
-                message.author.send("Bonjour, afin de pouvoir utiliser toutes les fonctionnalités de TekBot merci de renseigner votre clef d'authentification de compte Epitech.\n" +
-                "Pour cela, rendez vous sur le site suivant et copiez collez votre clef comme l'exemple ci-dessous : \n" +
+                message.author.send("Hello, in order to use all the features of TekBot, please enter your Epitech account authentication key.\n" +
+                "To do this, go to the following site and copy and paste your key as shown below : \n" +
                 "auth-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n" +
                 "https://intra.epitech.eu/admin/autolog\n");
             }
@@ -31,14 +31,14 @@ module.exports = (client, prefix, userKeys) => {
         if (message.content.startsWith('auth-')) {
             // Vérifier si l'utilisateur a déjà envoyé sa clé
             if (userKeys.has(message.author.id)) {
-                return message.reply('Vous avez déjà envoyé votre clé d\'authentification.');
+                return message.reply('You have already sent your authentication key.');
             }
     
             // Ajouter la clé d'authentification à la Map
             userKeys.set(message.author.id, message.content);
     
             // Envoyer un message de confirmation
-            message.reply('Votre clé d\'authentification a bien été enregistrée.');
+            message.reply('Your authentication key has been successfully registered.');
         }
     });
 }

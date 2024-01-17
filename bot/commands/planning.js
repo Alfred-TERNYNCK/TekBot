@@ -20,26 +20,26 @@ module.exports = (client, prefix) => {
             const planningEmbed = {
                 color: 0x0099ff,
                 title: 'Planning',
-                description: requestedDay ? `Planning pour ${capitalizeFirstLetter(requestedDay)}` : 'Planning de la semaine',
+                description: requestedDay ? `Planning for ${capitalizeFirstLetter(requestedDay)}` : 'Weekly Planning',
                 fields: [],
             };
 
             if (requestedDay && weekPlanning[requestedDay]) {
                 const daySchedule = weekPlanning[requestedDay];
-                const morningActivity = `Matin : ${daySchedule.morning.activity} (${daySchedule.morning.start} - ${daySchedule.morning.end})`;
-                const afternoonActivity = `Après-midi : ${daySchedule.afternoon.activity} (${daySchedule.afternoon.start} - ${daySchedule.afternoon.end})`;
+                const morningActivity = `Morning : ${daySchedule.morning.activity} (${daySchedule.morning.start} - ${daySchedule.morning.end})`;
+                const afternoonActivity = `Afternoon : ${daySchedule.afternoon.activity} (${daySchedule.afternoon.start} - ${daySchedule.afternoon.end})`;
 
                 planningEmbed.fields.push({ name: capitalizeFirstLetter(requestedDay), value: `${morningActivity}\n${afternoonActivity}` });
             } else if (!requestedDay) {
                 for (const day in weekPlanning) {
                     const daySchedule = weekPlanning[day];
-                    const morningActivity = `Matin : ${daySchedule.morning.activity} (${daySchedule.morning.start} - ${daySchedule.morning.end})`;
-                    const afternoonActivity = `Après-midi : ${daySchedule.afternoon.activity} (${daySchedule.afternoon.start} - ${daySchedule.afternoon.end})`;
+                    const morningActivity = `Morning : ${daySchedule.morning.activity} (${daySchedule.morning.start} - ${daySchedule.morning.end})`;
+                    const afternoonActivity = `Afternoon : ${daySchedule.afternoon.activity} (${daySchedule.afternoon.start} - ${daySchedule.afternoon.end})`;
 
                     planningEmbed.fields.push({ name: capitalizeFirstLetter(day), value: `${morningActivity}\n${afternoonActivity}` });
                 }
             } else {
-                message.reply('Jour spécifique invalide.');
+                message.reply('Invalid specific day.');
                 return;
             }
 
