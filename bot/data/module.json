@@ -1,0 +1,43 @@
+{
+    "module": {
+        "module1":{
+            "title": "Project",
+            "title_link": "\/module\/2023\/B-EPI-310\/BAR-3-1\/acti-626590\/",
+            "timeline_start": "15\/01\/2024, 08h00",
+            "timeline_end": "19\/01\/2024, 23h42",
+            "timeline_barre": "30.3491",
+            "date_inscription": false,
+            "id_activite": "626590",
+            "soutenance_name": false,
+            "soutenance_link": false,
+            "soutenance_date": false,
+            "soutenance_salle": false
+        },
+        "module2":{
+            "title": "Project",
+            "title_link": "\/module\/2023\/B-EPI-310\/BAR-3-2\/acti-626591\/",
+            "timeline_start": "15\/01\/2024, 08h00",
+            "timeline_end": "19\/01\/2024, 23h42",
+            "timeline_barre": "30.3491",
+            "date_inscription": false,
+            "id_activite": "626591",
+            "soutenance_name": false,
+            "soutenance_link": false,
+            "soutenance_date": false,
+            "soutenance_salle": false
+        },
+        "module3":{
+            "title": "Project",
+            "title_link": "\/module\/2023\/B-EPI-310\/BAR-3-3\/acti-626592\/",
+            "timeline_start": "15\/01\/2024, 08h00",
+            "timeline_end": "19\/01\/2024, 23h42",
+            "timeline_barre": "30.3491",
+            "date_inscription": false,
+            "id_activite": "626592",
+            "soutenance_name": false,
+            "soutenance_link": false,
+            "soutenance_date": false,
+            "soutenance_salle": false
+        }
+    }
+}

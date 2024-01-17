@@ -1,0 +1,112 @@
+const { Client, GatewayIntentBits } = require('discord.js');
+const { token, prefix, logChannelId } = require('./data/config.json');
+const userData = require('./data/user_data.json');
+const planning = require('./data/planning.json');
+
+const client = new Client({
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.DirectMessages,
+    ],
+});
+
+client.once('ready', () => {
+    console.log(`Prêt ! Connecté en tant que ${client.user.tag}`);
+
+    const logChannel = client.channels.cache.get(logChannelId);
+
+    if (logChannel) {
+        logChannel.send('Je suis maintenant en ligne !');
+    } else {
+        console.error('Le canal de logs est introuvable. Assurez-vous que le canal log_bot existe et que le bot a les autorisations nécessaires.');
+    }
+});
+
+client.on('messageCreate', async message => {
+    if (message.author.bot || !message.content.startsWith(prefix)) {
+        return;
+    }
+
+    const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const command = args.shift().toLowerCase();
+
+    let embedToSend = null;
+
+    if (command === 'help') {
+        const helpEmbed = {
+            color: 0x0099ff,
+            title: 'Aide',
+            description: 'Liste des commandes',
+            fields: [
+                {
+                    name: 'Commandes',
+                    value: '!help : Affiche la liste des commandes\n!info : Affiche les informations de l\'utilisateur',
+                },
+            ],
+        };
+        embedToSend = helpEmbed;
+    }
+
+    if (command === 'info') {
+        const user = userData;
+
+        if (user) {
+            const timeLeft = (user.nsstat.nslog_norm - user.nsstat.active).toFixed(1);
+            const helpEmbed = {
+                color: 0x0099ff,
+                title: 'Information',
+                description: "Information de l'étudiant",
+                fields: [
+                    {
+                        name: 'Nom complet',
+                        value: user.title,
+                    },
+                    {
+                        name: 'GPA',
+                        value: user.gpa[0].gpa,
+                    },
+                    {
+                        name: 'Crédits',
+                        value: user.credits,
+                    },
+                    {
+                        name: 'Campus',
+                        value: user.groups[0].title,
+                    },
+                    {
+                        name: 'Temps de log actuel',
+                        value: user.nsstat.active.toString(),
+                    },
+                    {
+                        name: 'Temps de log à avoir',
+                        value: user.nsstat.nslog_norm.toString(),
+                    },
+                    {
+                        name: 'Temps de log restant',
+                        value: timeLeft.toString(),
+                    },
+                ],
+            };
+
+            embedToSend = helpEmbed;
+        } else {
+            const helpEmbed = {
+                color: 0x0099ff,
+                title: 'Information',
+                description: "L'utilisateur n'a pas été trouvé",
+            };
+
+            embedToSend = helpEmbed;
+        }
+    }
+
+    // Envoyer l'embed ou le message
+    if (embedToSend) {
+        await message.channel.send({ embeds: [embedToSend] });
+    }
+});
+
+client.login(token);

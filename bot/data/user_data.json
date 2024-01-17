@@ -1,0 +1,57 @@
+{
+    "login": "alfred.ternynck@epitech.eu",
+    "title": "Alfred TERNYNCK",
+    "internal_email": "alfred.ternynck@epitech.eu",
+    "lastname": "TERNYNCK",
+    "firstname": "Alfred",
+    "userinfo": {},
+    "picture": "\/file\/userprofil\/profilview\/alfred.ternynck@epitech.eu.jpg",
+    "picture_fun": null,
+    "scolaryear": "2023",
+    "promo": 2027,
+    "semester": 3,
+    "location": "ES\/BAR",
+    "documents": "vrac\/alfred.ternynck@epitech.eu",
+    "userdocs": null,
+    "shell": null,
+    "close": false,
+    "ctime": "2021-08-17 17:59:32",
+    "mtime": "2024-01-16 14:05:36",
+    "id_promo": "1978",
+    "id_history": "310725",
+    "course_code": "bachelor\/classic",
+    "semester_code": "B3",
+    "school_id": "1",
+    "school_code": "epitech",
+    "school_title": "epitech",
+    "old_id_promo": "242,244,250,1496,1497,1500",
+    "old_id_location": "4",
+    "rights": {},
+    "invited": false,
+    "studentyear": 2,
+    "admin": false,
+    "editable": true,
+    "restrictprofiles": true,
+    "groups": [
+        {
+            "title": "Barcelona",
+            "name": "Barcelona",
+            "count": 255
+        }
+    ],
+    "events": [],
+    "credits": 60,
+    "gpa": [
+        {
+            "gpa": "1.66",
+            "cycle": "bachelor"
+        }
+    ],
+    "nsstat": {
+        "active": 27.9,
+        "idle": 0,
+        "out_active": 0,
+        "out_idle": 0,
+        "nslog_norm": 40
+    }
+}

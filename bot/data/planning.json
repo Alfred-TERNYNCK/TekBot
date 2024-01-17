@@ -1,0 +1,88 @@
+{
+    "week_planning" : {
+        "monday" : {
+            "morning" : {
+                "start" : "08:00",
+                "end" : "12:00",
+                "activity" : "Work on project A"
+            },
+            "afternoon" : {
+                "start" : "13:00",
+                "end" : "17:00",
+                "activity" : "Meeting with team"
+            }
+        },
+        "tuesday" : {
+            "morning" : {
+                "start" : "08:00",
+                "end" : "12:00",
+                "activity" : "Work on project B"
+            },
+            "afternoon" : {
+                "start" : "13:00",
+                "end" : "17:00",
+                "activity" : "Client presentation"
+            }
+        },
+        "wednesday" : {
+            "morning" : {
+                "start" : "08:00",
+                "end" : "12:00",
+                "activity" : "Work on project C"
+            },
+            "afternoon" : {
+                "start" : "13:00",
+                "end" : "17:00",
+                "activity" : "Team brainstorming"
+            }
+        },
+        "thursday" : {
+            "morning" : {
+                "start" : "08:00",
+                "end" : "12:00",
+                "activity" : "Work on project D"
+            },
+            "afternoon" : {
+                "start" : "13:00",
+                "end" : "17:00",
+                "activity" : "Client meeting"
+            }
+        },
+        "friday" : {
+            "morning" : {
+                "start" : "08:00",
+                "end" : "12:00",
+                "activity" : "Work on project E"
+            },
+            "afternoon" : {
+                "start" : "13:00",
+                "end" : "17:00",
+                "activity" : "Team retrospective"
+            }
+        },
+        "saturday" : {
+            "morning" : {
+                "start" : "08:00",
+                "end" : "12:00",
+                "activity" : "Personal time"
+            },
+            "afternoon" : {
+                "start" : "13:00",
+                "end" : "17:00",
+                "activity" : "Family outing"
+            }
+        },
+        "sunday" : {
+            "morning" : {
+                "start" : "08:00",
+                "end" : "12:00",
+                "activity" : "Relaxation"
+            },
+            "afternoon" : {
+                "start" : "13:00",
+                "end" : "17:00",
+                "activity" : "Hobby time"
+            }
+        }
+    }
+}

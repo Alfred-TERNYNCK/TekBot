@@ -1,0 +1,36 @@
+{
+    "modules": [
+        {
+            "B-CPE-100": {
+                "title": "B1 - Unix & C Lab Seminar (Part I)",
+                "credits": 4,
+                "grade": "B",
+                "semester": 1
+            },
+            "B-CPE-101": {
+                "title": "B1 - Unix & C Lab Seminar (Part II)",
+                "credits": 3,
+                "grade": "C",
+                "semester": 1
+            },
+            "B-ANG-001": {
+                "title": "B0 - English",
+                "credits": 1,
+                "grade": "Acquis",
+                "semester": 1
+            },
+            "B-MAT-100": {
+                "title": "B1 - Mathematics",
+                "credits": 2,
+                "grade": "A",
+                "semester": 1
+            },
+            "G-CUS-001": {
+                "title": "S0 - KYT\/CAT - Network & Communication",
+                "credits": 1,
+                "grade": "A",
+                "semester": 1
+            }
+        }
+    ]
+}
